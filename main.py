@@ -1,3 +1,6 @@
 a = 1
 
-print(a)
+if a:
+    print(a)
+else:
+    print(0)
