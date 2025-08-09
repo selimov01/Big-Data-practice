@@ -66,7 +66,6 @@ for _ in range(N):
                     if distance <= order_time * S:
                         valid_taxi.add(id)
             else:
-                # Пересекаем точку 0
                 if order_pos >= min_pos or order_pos <= max_pos:
                     distance = min((order_pos - min_pos) % L, (max_pos - order_pos) % L)
                     if distance <= order_time * S:
