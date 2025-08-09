@@ -56,7 +56,7 @@ for _ in range(N):
             delta_time = timestamp - last_time
             max_distance = delta_time * S
 
-            min_pos = (last_pos - max_distance) % L
+            min_pos = last_pos % L
             max_pos = (last_pos + max_distance) % L
 
             if min_pos <= max_pos:
@@ -66,13 +66,11 @@ for _ in range(N):
                     if distance <= order_time * S:
                         valid_taxi.add(id)
             else:
+            
                 if order_pos >= min_pos or order_pos <= max_pos:
                     distance = min((order_pos - min_pos) % L, (max_pos - order_pos) % L)
                     if distance <= order_time * S:
                         valid_taxi.add(taxi_id)
-
-                    if distance <= order_time * S:
-                        valid_taxi.add(id)
 
         if not valid_taxi:
             order_res.append("-1")
